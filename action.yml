@@ -1,16 +1,16 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-name: 'Action TS Template'
-description: 'A typescript template for rapid development of GitHub actions.'
+name: 'Create Labels'
+description: '🤔 Auto create labels according to the repository path.'
 author: 'xrkffgg'
 
 branding:
   # https://feathericons.com/
   # e.g. https://haya14busa.github.io/github-action-brandings/
-  icon: 'file'
-  color: 'blue'
+  icon: 'command'
+  color: 'yellow'
 
 inputs:
-  GITHUB_TOKEN:
+  token:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
     required: true

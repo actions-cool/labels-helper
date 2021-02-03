@@ -1,7 +1,0 @@
-es/**/*
-lib/**/*
-node_modules
-_site
-dist
-coverage
-**/*.d.ts

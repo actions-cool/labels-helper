@@ -1,27 +1,26 @@
 {
-  "name": "action-ts-template",
+  "name": "create-labels",
   "version": "0.0.1",
   "private": true,
-  "description": "A typescript template for rapid development of GitHub actions.",
-  "main": "lib/main.js",
+  "description": "🤔 Auto create labels according to the repository path.",
+  "main": "dist/main.js",
   "scripts": {
-    "build": "tsc",
+    "main": "node ./src/main.js",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "lint": "eslint src/**/*.ts",
     "package": "ncc build",
-    "all": "npm run build && npm run format && npm run lint && npm run package"
+    "all": "npm run format-check && npm run package"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/actions-cool/action-ts-template",
+    "url": "https://github.com/actions-cool/create-labels",
     "branch": "main"
   },
   "keywords": [
     "actions",
     "node",
-    "setup",
-    "template"
+    "create",
+    "labels"
   ],
   "author": "xrkffgg",
   "license": "MIT",
@@ -33,8 +32,7 @@
   "devDependencies": {
     "@umijs/fabric": "^2.5.6",
     "@vercel/ncc": "^0.27.0",
-    "eslint": "^7.18.0",
-    "prettier": "^2.2.1",
-    "typescript": "^4.1.3"
+    "axios": "^0.21.1",
+    "prettier": "^2.2.1"
   }
 }
