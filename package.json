@@ -1,37 +1,34 @@
 {
-  "name": "create-labels",
+  "name": "labels-helper",
   "version": "0.0.1",
   "private": true,
-  "description": "🤔 Auto create labels according to the repository path.",
-  "main": "dist/main.js",
+  "description": "🚀 Automatically create and delete labels in batches.",
   "scripts": {
-    "main": "node ./src/main.js",
-    "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "package": "ncc build",
-    "all": "npm run format-check && npm run package"
+    "create": "yarn && node ./src/create.js",
+    "delete": "yarn && node ./src/delete.js",
+    "format": "prettier --write **/*.js",
+    "format-check": "prettier --check **/*.js",
+    "all": "npm run format-check"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/actions-cool/create-labels",
+    "url": "https://github.com/actions-cool/labels-helper",
     "branch": "main"
   },
   "keywords": [
-    "actions",
     "node",
     "create",
+    "delete",
     "labels"
   ],
   "author": "xrkffgg",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "@octokit/rest": "^18.0.14"
+    "@octokit/rest": "^18.0.14",
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
     "@umijs/fabric": "^2.5.6",
-    "@vercel/ncc": "^0.27.0",
     "axios": "^0.21.1",
     "prettier": "^2.2.1"
   }

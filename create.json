@@ -8,5 +8,6 @@
   "path": "components/",
   "ignore": "col, row, version, index.tsx",
   "format": "Components: $name",
+  "desc": "This is default $name",
   "color": "auto"
 }
