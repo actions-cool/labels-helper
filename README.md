@@ -1,4 +1,4 @@
-🚀 Labels Helper
+# 🚀 Labels Helper
 
 Automatically create and delete labels in batches.
 
