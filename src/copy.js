@@ -1,6 +1,6 @@
 const { readFileSync } = require('fs');
 const { dealStringToArr } = require('./util.js');
-const { queryLabels, createLabel } = require('./copy');
+const { queryLabels, createLabel } = require('./octokit');
 
 async function run() {
   try {
