@@ -1,8 +1,8 @@
 const axios = require('axios');
 const { readFileSync } = require('fs');
-const { Octokit } = require('@octokit/rest');
 
 const { dealStringToArr, getReandomColor } = require('./util.js');
+const { createLabel } = require('./octokit');
 
 async function run() {
   try {
@@ -12,13 +12,6 @@ async function run() {
     const getRepo = json['get-repo'];
     const targetOwner = json['target-owner'];
     const targetRepo = json['target-repo'];
-    const token = json['token'];
-    if (!token) {
-      console.log('Need token!');
-      return false;
-    }
-    const octokit = new Octokit({ auth: `token ${token}` });
-
     const path = json['path'];
     const ignore = json['ignore'];
     const format = json['format'];
@@ -34,18 +27,13 @@ async function run() {
         console.log(`[${name}] is ignore!`);
         continue;
       }
-      try {
-        await octokit.issues.createLabel({
-          owner: targetOwner,
-          repo: targetRepo,
-          name: getFormat(name, format),
-          color: getReandomColor(color),
-          description: getFormat(name, desc),
-        });
-        console.log(`[${getFormat(name, format)}] created!`);
-      } catch (err) {
-        console.log(err.message);
-      }
+      await createLabel(
+        targetOwner,
+        targetRepo,
+        getFormat(name, format),
+        getReandomColor(color),
+        getFormat(name, desc),
+      );
     }
   } catch (error) {
     console.log(error.message);

@@ -3,26 +3,27 @@
   "version": "0.0.1",
   "private": true,
   "description": "🚀 Automatically create and delete labels in batches.",
-  "scripts": {
-    "create": "yarn && node ./src/create.js",
-    "delete": "yarn && node ./src/delete.js",
-    "format": "prettier --write **/*.js",
-    "format-check": "prettier --check **/*.js",
-    "all": "npm run format-check"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/actions-cool/labels-helper",
-    "branch": "main"
-  },
   "keywords": [
     "node",
     "create",
     "delete",
     "labels"
   ],
-  "author": "xrkffgg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/actions-cool/labels-helper",
+    "branch": "main"
+  },
   "license": "MIT",
+  "author": "xrkffgg",
+  "scripts": {
+    "create": "yarn && node ./src/create.js",
+    "delete": "yarn && node ./src/delete.js",
+    "copy": "yarn && node ./src/copy.js",
+    "format": "prettier --write **/*.js",
+    "format-check": "prettier --check **/*.js",
+    "all": "npm run format-check"
+  },
   "dependencies": {
     "@octokit/rest": "^18.0.14",
     "lodash": "^4.17.20"
