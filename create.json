@@ -3,7 +3,7 @@
   "get-repo": "ant-design",
   "target-owner": "actions-cool",
   "target-repo": "create-labels",
-  "token": "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",
+  "token": "",
   "// token": "The token should have target-repo write access.",
   "path": "components/",
   "ignore": "col, row, version, index.tsx",
